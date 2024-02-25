@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Bank.Infra.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Bank.Infra.Data.BankConfigurations">
+            <summary>
+            Classe de configurações da entidade.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.BankConfigurations.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Api.Bank.Domain.Entities.BankEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.BankSlipConfigurations">
+            <summary>
+            Classe de configurações da entidade.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.BankSlipConfigurations.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{Api.Bank.Domain.BankSlipEntity})">
+            <inheritdoc/>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.DataContext">
+            <summary>
+            Implementação do contexto de dados.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.DataContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="options">Opções do contexto.</param>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.DataContext.SaveChangesAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.DataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Método que faz a criação dos modelos do contexto.
+            </summary>
+            <param name="modelBuilder">Instância do contrutor de modelos do contexto.</param>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.DataContextFactory">
+            <summary>
+            Classe de fábrica de contexto.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.DataContextFactory.CreateDbContext(System.String[])">
+            <summary>
+            Método que efetuará a criação do contexto.
+            </summary>
+            <param name="args">argumentos de criação.</param>
+            <returns>Contexto criado.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Extensions.DbContextOptionsBuilderExtensions">
+            <summary>
+            Extensões para <see cref="T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Extensions.DbContextOptionsBuilderExtensions.UsePostgres(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder,System.String)">
+            <summary>
+            Extensão para adição do Postgres como base de dados.
+            </summary>
+            <param name="builder">Objeto referenciado.</param>
+            <param name="connectionString">String de conexão.</param>
+            <returns>Objeto referenciado.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Extensions.IApplicationBuilderExtensions">
+            <summary>
+            Extensões para <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Extensions.IApplicationBuilderExtensions.ApplyMigrations``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Extensão que efetua a migração de forma automática do contexto.
+            </summary>
+            <typeparam name="TContext">Tipo do contexto de dados.</typeparam>
+            <param name="builder">Objeto referenciado.</param>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Extensions.IServiceCollectionExtensions">
+            <summary>
+            Extensões para <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Extensions.IServiceCollectionExtensions.AddUnitOfWork(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Extensão que adiciona a unidade de trabalho ao serviço.
+            </summary>
+            <param name="services">Objeto referenciado.</param>
+            <returns>Objeto referenciado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Extensions.IServiceCollectionExtensions.AddUnitOfWork``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Extensão que adiciona a unidade de trabalho ao serviço.
+            </summary>
+            <typeparam name="TContext">Contexto utilizado pela unidade de trabalho.</typeparam>
+            <param name="services">Objeto referenciado.</param>
+            <returns>Objeto referenciado.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Implementations.UnitOfWork">
+            <summary>
+            Implementação da unidade de trabalho.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="context">Instância do contexto.</param>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Implementations.UnitOfWork`1">
+            <summary>
+            Implementação da unidade de trabalho.
+            </summary>
+            <typeparam name="TContext">Contexto à ser utilizado pela unidade de trabalho.</typeparam>
+        </member>
+        <member name="F:Api.Bank.Infra.Data.Implementations.UnitOfWork`1._context">
+            <summary>
+            Instância do contexto.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork`1.#ctor(`0)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="context">Instância do contexto.</param>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork`1.Set``1">
+            <summary>
+            Método que cria uma instância de um <see cref="T:Microsoft.EntityFrameworkCore.DbSet`1"/> de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <returns>DbSet da entidade solicitada.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork`1.SaveChanges">
+            <summary>
+            Método que efetua a confirmação de alterações do contexto.
+            </summary>
+            <returns>Contagem de registros alterados.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork`1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Método que efetua a confirmação de alterações do contexto.
+            </summary>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Contagem de registros alterados.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Implementations.UnitOfWork`1.Dispose">
+            <summary>
+            Método que efetua a liberação de resursos de um objeto.
+            </summary>
+        </member>
+        <member name="T:Api.Bank.Infra.Data.Migrations.Initial">
+            <inheritdoc />
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Api.Bank.Infra.Data.Migrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Bank.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Bank.Domain.AbstractEntity">
+            <summary>
+            Classe abstrata que serve de base para todas as entidades do sistema.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.AbstractEntity.Id">
+            <summary>
+            Índice único da entidade.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.AbstractEntity.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.DTOs.BankDTO">
+            <summary>
+            DTO de banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankDTO.Id">
+            <summary>
+            Id do registro.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankDTO.Code">
+            <summary>
+            Código do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankDTO.DisplayName">
+            <summary>
+            Nome do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankDTO.InterestIndex">
+            <summary>
+            Taxa de juros do banco.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.DTOs.BankDTO.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.DTOs.BankSlipDTO">
+            <summary>
+            DTO de boleto bancário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.Id">
+            <summary>
+            Id do registro.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.BankId">
+            <summary>
+            Id do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.PayerName">
+            <summary>
+            Nome do pagador.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.PayerDocument">
+            <summary>
+            Número de documento do pagador.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.BeneficiaryName">
+            <summary>
+            Nome do beneficiário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.BeneficiaryDocument">
+            <summary>
+            Número de documento do beneficiário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.Value">
+            <summary>
+            Valor do boleto.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.DueDate">
+            <summary>
+            Data de vencimento do boleto.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.DTOs.BankSlipDTO.Observations">
+            <summary>
+            Observações do boleto.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.DTOs.BankSlipDTO.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.PageableCollectionDTO`1">
+            <summary>
+            DTO de paginação de itens.
+            </summary>
+            <typeparam name="T">Tipo de objeto da lista de itens.</typeparam>
+        </member>
+        <member name="P:Api.Bank.Domain.PageableCollectionDTO`1.Items">
+            <summary>
+            Itens da lista.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.PageableCollectionDTO`1.Total">
+            <summary>
+            Quantidade total de itens.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.PageableCollectionDTO`1.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Entities.BankEntity">
+            <summary>
+            Classe de entidade de banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Entities.BankEntity.Code">
+            <summary>
+            Código do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Entities.BankEntity.DisplayName">
+            <summary>
+            Nome do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Entities.BankEntity.InterestIndex">
+            <summary>
+            Taxa de juros do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Entities.BankEntity.BankSlips">
+            <summary>
+            Relacionamento com boletos bancários.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Entities.BankEntity.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.BankSlipEntity">
+            <summary>
+            Classe de entidade de boleto bancário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.BankId">
+            <summary>
+            Id do banco.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.PayerName">
+            <summary>
+            Nome do pagador.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.PayerDocument">
+            <summary>
+            Número de documento do pagador.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.BeneficiaryName">
+            <summary>
+            Nome do beneficiário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.BeneficiaryDocument">
+            <summary>
+            Número de documento do beneficiário.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.Value">
+            <summary>
+            Valor do boleto.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.DueDate">
+            <summary>
+            Data de vencimento do boleto.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.Observations">
+            <summary>
+            Observações do boleto.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.BankSlipEntity.Bank">
+            <summary>
+            Relacionamento com Banco.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.BankSlipEntity.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Api.Bank.Domain.Exceptions.EntityNotFoundException">
+            <summary>
+            Classe de exceção para entidade não localizada.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.EntityNotFoundException.#ctor(System.String)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="message">Mensagem de exceção.</param>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.EntityNotFoundException.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Exceptions.ServiceException">
+            <summary>
+            Classe de exceção de serviços de Api.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Exceptions.ServiceException.StatusCode">
+            <summary>
+            Código de status de Exceção.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceException.#ctor">
+            <summary>
+            Método construtor.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceException.#ctor(System.Net.HttpStatusCode)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="statusCode">Código de status.</param>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceException.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="statusCode">Código de status.</param>
+            <param name="message">Mensagem destatus.</param>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceException.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Exceptions.ServiceNotFoundException">
+            <summary>
+            Classe de exceção de serviço não localizado.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceNotFoundException.#ctor(System.String)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="message">Mensagem de exceção.</param>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceNotFoundException.#ctor(System.Type)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="type">Tipo do serviço.</param>
+        </member>
+        <member name="M:Api.Bank.Domain.Exceptions.ServiceNotFoundException.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Interfaces.IBankService">
+            <summary>
+            Interface do serviço de banco.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IBankService.GetAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém lista paginável de bancos.
+            </summary>
+            <param name="skip">Itens à serem ignorados.</param>
+            <param name="take">Itens à serem obtidos.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Coleção paginada de bancos.</returns>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IBankService.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém lista paginável de bancos.
+            </summary>
+            <param name="code">Código do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco.</returns>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IBankService.PostAsync(Api.Bank.Domain.DTOs.BankDTO,System.Threading.CancellationToken)">
+            <summary>
+            Métoodo que registra um banco.
+            </summary>
+            <param name="request">Dados do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco registrado.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Interfaces.IBankSlipService">
+            <summary>
+            Interface do serviço de boleto bancário.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IBankSlipService.GetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém lista paginável de bancos.
+            </summary>
+            <param name="id">Id do boleto.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do boleto bancário.</returns>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IBankSlipService.PostAsync(Api.Bank.Domain.DTOs.BankSlipDTO,System.Threading.CancellationToken)">
+            <summary>
+            Método que registra um novo boleto bancário.
+            </summary>
+            <param name="request">Dados do boleto à ser registrado.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do boleto registrado.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Interfaces.IUnitOfWork">
+            <summary>
+            Interface da unidade de trabalho.
+            </summary>
+        </member>
+        <member name="T:Api.Bank.Domain.Interfaces.IUnitOfWork`1">
+            <summary>
+            Interface da unidade de trabalho.
+            </summary>
+            <typeparam name="TContext">Contexto à ser utilizado pela unidade de trabalho.</typeparam>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IUnitOfWork`1.Set``1">
+            <summary>
+            Método que cria uma instância de um <see cref="T:Microsoft.EntityFrameworkCore.DbSet`1"/> de uma entidade.
+            </summary>
+            <typeparam name="T">Tipo da entidade.</typeparam>
+            <returns>DbSet da entidade solicitada.</returns>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IUnitOfWork`1.SaveChanges">
+            <summary>
+            Método que efetua a confirmação de alterações do contexto.
+            </summary>
+            <returns>Contagem de registros alterados.</returns>
+        </member>
+        <member name="M:Api.Bank.Domain.Interfaces.IUnitOfWork`1.SaveChangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Método que efetua a confirmação de alterações do contexto.
+            </summary>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Contagem de registros alterados.</returns>
+        </member>
+        <member name="T:Api.Bank.Domain.Models.StatusCodeModel">
+            <summary>
+            Modelo de retorno de dados em caso de falhas de requisição.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Models.StatusCodeModel.Status">
+            <summary>
+            Código de status da falha.
+            </summary>
+        </member>
+        <member name="P:Api.Bank.Domain.Models.StatusCodeModel.Title">
+            <summary>
+            Descrição da falha.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Domain.Models.StatusCodeModel.ToString">
+            <summary>
+            Método que traz uma cadeia de caracteres que representa o objeto atual.
+            </summary>
+            <returns>Cadeia de caracteres que representa o objeto atual.</returns>
+        </member>
+    </members>
+</doc>

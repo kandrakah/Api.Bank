@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Bank.Infra.Shared</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Bank.Infra.Shared.Extensions.ILoggingBuilderExtensions">
+            <summary>
+            Extensões para <see cref="T:Microsoft.Extensions.Logging.ILoggingBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.Extensions.ILoggingBuilderExtensions.AddSerilog(Microsoft.Extensions.Logging.ILoggingBuilder,Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            Extensão para adicionar o serviço Serilog.
+            </summary>
+            <param name="loggingBuilder">Objeto referenciado.</param>
+            <param name="config">Instância do container de configurações.</param>
+            <param name="sectionName">Nome da seção de configurações.</param>
+            <returns>Objeto referenciado.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Shared.IServiceProviderExtensions">
+            <summary>
+            Extensões para <see cref="T:System.IServiceProvider"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.IServiceProviderExtensions.GetInternalService``1(System.IServiceProvider)">
+            <summary>
+            Extensão para obter um serviço.
+            </summary>
+            <typeparam name="T">Tipo do serviço requerido.</typeparam>
+            <param name="provider">Objeto referenciado.</param>
+            <returns>Objeto referenciado.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Shared.StringExtensions">
+            <summary>
+            Extensões para <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.IsCpf(System.String)">
+            <summary>
+            Extensão que valida se o valor é um CPF.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Verdadeiro caso o valor seja um CPF e falso caso contrário.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.IsCnpj(System.String)">
+            <summary>
+            Extensão que valida se o valor é um CNPJ.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Verdadeiro caso o valor seja um CNPJ e falso caso contrário.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.IsCpfOrCnpj(System.String)">
+            <summary>
+            Extensão que valida se o valor é um CPF ou CNPJ.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Verdadeiro caso o valor seja um CPF ou CNPJ e falso caso contrário.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.FormatCpf(System.String)">
+            <summary>
+            Extensão que faz a formatação de um número de CPF.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Valor do documento formatado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.FormatCnpj(System.String)">
+            <summary>
+            Extensão que faz a formatação de um número de CNPJ.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Valor do documento formatado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.FormatCpfOrCnpj(System.String)">
+            <summary>
+            Extensão que faz a formatação de um número de CPF ou CNPJ.
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Valor do documento formatado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.StringExtensions.Unformat(System.String)">
+            <summary>
+            Extensão que remove formatação de documento (CPF/CNPJ).
+            </summary>
+            <param name="value">Objeto referenciado.</param>
+            <returns>Número de documento sem formatação.</returns>
+        </member>
+        <member name="T:Api.Bank.Infra.Shared.JWTManager">
+            <summary>
+            Classe de gerenciamento de token.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Infra.Shared.JWTManager._logger">
+            <summary>
+            Instância do serviço de logs.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Infra.Shared.JWTManager._handler">
+            <summary>
+            Handler de tokens.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Infra.Shared.JWTManager._issuer">
+            <summary>
+            Nome do emissor do token.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Infra.Shared.JWTManager._validAudiences">
+            <summary>
+            Enumeração de audiências válidas.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.#ctor(Microsoft.Extensions.Logging.ILogger,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="logger">Instância do serviço de logs.</param>
+            <param name="issuer">Nome do emissor do token.</param>
+            <param name="validAudiences">Enumeração de audiências válidas.</param>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.CanReadToken(System.String)">
+            <summary>
+            Método que verifica se o token pode ser lido.
+            </summary>
+            <param name="token">Token à ser validado.</param>
+            <returns>Verdadeiro caso o token possa ser lido e falso caso contrário.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.ReadToken(System.String)">
+            <summary>
+            Método que faz a leitura do token.
+            </summary>
+            <param name="token">Token à ser lido.</param>
+            <returns><see cref="T:Microsoft.IdentityModel.Tokens.SecurityToken"/> contendo os dados do token informado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.ReadJwtToken(System.String)">
+            <summary>
+            Método que faz a leitura do token.
+            </summary>
+            <param name="token">Token à ser lido.</param>
+            <returns><see cref="T:System.IdentityModel.Tokens.Jwt.JwtSecurityToken"/> contendo os dados do token informado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.CreateToken(System.String,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Security.Cryptography.RSAParameters,System.String)">
+            <summary>
+            Método que faz a criação de um token.
+            </summary>
+            <param name="audience">Audiência do token.</param>
+            <param name="expiration">Validade, em anos, do token.</param>
+            <param name="claims">Atributos do token.</param>
+            <param name="keyParameters">Parâmetros da chave de segurança do token. Veja <see cref="T:System.Security.Cryptography.RSAParameters"/></param>
+            <param name="algorithm">Algoritmo utilizado na geração da assinatura do token. Veja <see cref="T:Microsoft.IdentityModel.Tokens.SecurityAlgorithms"/></param>
+            <returns>Token JWT gerado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.CreateToken(System.String,System.DateTime,System.Collections.Generic.IDictionary{System.String,System.Object},System.Security.Cryptography.RSAParameters,System.String)">
+            <summary>
+            Método que faz a criação de um token.
+            </summary>
+            <param name="audience">Audiência do token.</param>
+            <param name="expiration">Data de validade do token.</param>
+            <param name="claims">Atributos do token.</param>
+            <param name="keyParameters">Parâmetros da chave de segurança do token. Veja <see cref="T:System.Security.Cryptography.RSAParameters"/></param>
+            <param name="algorithm">Algoritmo utilizado na geração da assinatura do token. Veja <see cref="T:Microsoft.IdentityModel.Tokens.SecurityAlgorithms"/></param>
+            <returns>Token JWT gerado.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.ValidateToken(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Método que faz a validação do token.
+            </summary>
+            <param name="token">Token que será validado.</param>
+            <param name="keyParameters">Parâmetros da chave de segurança do token. Veja <see cref="T:System.Security.Cryptography.RSAParameters"/></param>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.ValidateToken(System.String,Microsoft.IdentityModel.Tokens.TokenValidationParameters)">
+            <summary>
+            Método que faz a validação do token.
+            </summary>
+            <param name="token">Token que será validado.</param>
+            <param name="parameters">Parâmetros de validação de token. Veja <see cref="T:Microsoft.IdentityModel.Tokens.TokenValidationParameters"/></param>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.GetSecurityKey(System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Método que gera um objeto <see cref="T:Microsoft.IdentityModel.Tokens.SecurityKey"/> com base nos parâmetros
+            da chave de segurança.
+            </summary>
+            <param name="keyParameters">Parâmetros da chave de segurança. Veja <see cref="T:System.Security.Cryptography.RSAParameters"/></param>
+            <returns><see cref="T:Microsoft.IdentityModel.Tokens.SecurityKey"/> contendo os dados da chave de segurança.</returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.CreateSigningCredentials(Microsoft.IdentityModel.Tokens.SecurityKey,System.String)">
+            <summary>
+            Método que cria as credenciais de assinatura do token.
+            </summary>
+            <param name="securityKey">Dados da chave de segurança. Veja <see cref="T:Microsoft.IdentityModel.Tokens.SecurityKey"/></param>
+            <param name="algorithm">Algoritmo utilizado na geração da assinatura do token. Veja <see cref="T:Microsoft.IdentityModel.Tokens.SecurityAlgorithms"/></param>
+            <returns>Dados das credenciais de asinatura do token. Veja <see cref="T:Microsoft.IdentityModel.Tokens.SigningCredentials"/></returns>
+        </member>
+        <member name="M:Api.Bank.Infra.Shared.JWTManager.GetValidationParameters(System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Método que obtém os parâmetros de validação de token.
+            </summary>
+            <param name="keyParameters">Parâmetros da chave de segurança. Veja <see cref="T:System.Security.Cryptography.RSAParameters"/></param>
+            <returns><see cref="T:Microsoft.IdentityModel.Tokens.TokenValidationParameters"/> contendo os parâmetros de validação.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Bank.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Bank.Service.Abstracts.AbstractService">
+            <summary>
+            Classe abstrata de serviço.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Service.Abstracts.AbstractService._logger">
+            <summary>
+            Instância do serviço de logs.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Service.Abstracts.AbstractService._provider">
+            <summary>
+            Instância do provedor de serviços da aplicação.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Service.Abstracts.AbstractService.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="provider">Instância do provedor de serviços da aplicação.</param>
+        </member>
+        <member name="M:Api.Bank.Service.Abstracts.AbstractService.GetService``1">
+            <summary>
+            Método que obtém a instância de um serviço.
+            </summary>
+            <typeparam name="T">Interface do serviço solicitada.</typeparam>
+            <returns>Instância do serviço solicitado.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.Abstracts.AbstractService.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:Api.Bank.Service.Abstracts.AbstractService.Dispose(System.Boolean)">
+            <summary>
+            Método para liberação de recursos usados pelo serviço.
+            </summary>
+            <param name="disposing">Define se propriedades filhas também devem ser liberadas.</param>
+        </member>
+        <member name="T:Api.Bank.Service.BankService">
+            <summary>
+            Implementação do serviço de banco.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Service.BankService.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="provider">Instância do provedor de serviços.</param>
+        </member>
+        <member name="M:Api.Bank.Service.BankService.GetAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém lista paginável de bancos.
+            </summary>
+            <param name="skip">Itens à serem ignorados.</param>
+            <param name="take">Itens à serem obtidos.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Coleção paginada de bancos.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.BankService.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém os dados de um banco.
+            </summary>
+            <param name="code">Código do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.BankService.PostAsync(Api.Bank.Domain.DTOs.BankDTO,System.Threading.CancellationToken)">
+            <summary>
+            Métoodo que registra um banco.
+            </summary>
+            <param name="request">Dados do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco registrado.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.BankService.ValidateRequestAsync``1(Api.Bank.Domain.Interfaces.IUnitOfWork{``0},Api.Bank.Domain.DTOs.BankDTO,System.Threading.CancellationToken)">
+            <summary>
+            Método que efetua a validação da requisição.
+            </summary>
+            <typeparam name="TContext">Tipo de contexto de dados.</typeparam>
+            <param name="unitOfWork">Instância da unidade de trabalho.</param>
+            <param name="request">Dados da requisição.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+        </member>
+        <member name="T:Api.Bank.Service.BankSlipService">
+            <summary>
+            Implementação do serviço de boleto bancário.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Service.BankSlipService.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="provider">Instância do provedor de serviços.</param>
+        </member>
+        <member name="M:Api.Bank.Service.BankSlipService.GetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Método que obtém lista paginável de bancos.
+            </summary>
+            <param name="id">Id do boleto.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do boleto bancário.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.BankSlipService.PostAsync(Api.Bank.Domain.DTOs.BankSlipDTO,System.Threading.CancellationToken)">
+            <summary>
+            Método que registra um novo boleto bancário.
+            </summary>
+            <param name="request">Dados do boleto à ser registrado.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do boleto registrado.</returns>
+        </member>
+        <member name="M:Api.Bank.Service.BankSlipService.ValidateRequestAsync``1(Api.Bank.Domain.Interfaces.IUnitOfWork{``0},Api.Bank.Domain.DTOs.BankSlipDTO,System.Threading.CancellationToken)">
+            <summary>
+            Método que efetua a validação da requisição.
+            </summary>
+            <typeparam name="TContext">Tipo de contexto de dados.</typeparam>
+            <param name="unitOfWork">Instância da unidade de trabalho.</param>
+            <param name="request">Dados da requisição.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+        </member>
+    </members>
+</doc>

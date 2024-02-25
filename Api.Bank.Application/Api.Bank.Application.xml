@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api.Bank.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Bank.Application.Abstracts.AbstractController">
+            <summary>
+            Classe abstrata de controle.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Application.Abstracts.AbstractController._logger">
+            <summary>
+            Instância do serviço de logs.
+            </summary>
+        </member>
+        <member name="F:Api.Bank.Application.Abstracts.AbstractController._provider">
+            <summary>
+            Instância do provedor de serviços. Veja <see cref="T:System.IServiceProvider"/> para mais detalhes.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Application.Abstracts.AbstractController.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            /// <param name="provider">Instância do provedor de serviços.</param>
+        </member>
+        <member name="M:Api.Bank.Application.Abstracts.AbstractController.GetService``1">
+            <summary>
+            Método que obtém a instância de um serviço.
+            </summary>
+            <typeparam name="T">Interface do serviço solicitada.</typeparam>
+            <returns>Instância do serviço solicitado.</returns>
+        </member>
+        <member name="M:Api.Bank.Application.Abstracts.AbstractController.Error(System.Exception)">
+            <summary>
+            Método que responte à requisição com um erro.
+            </summary>
+            <param name="exception">exceção à ser respondida à requisição.</param>
+            <returns>Resposta à ser devolvida ao requerente da requisição. <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult"/></returns>
+        </member>
+        <member name="T:Api.Bank.Application.Attributes.AuthorizeAttribute">
+            <inheritdoc/>
+        </member>
+        <member name="M:Api.Bank.Application.Attributes.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Api.Bank.Application.Controllers.BanksController">
+            <summary>
+            Classe de controle de endpoints para banco.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BanksController.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="provider">Instância do provedor de serviços.</param>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BanksController.GetAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Endpoint para obtenção de lista paginável de bancos.
+            </summary>
+            <param name="skip">Itens à serem ignorados.</param>
+            <param name="take">Itens à serem obtidos.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Lista paginável de bancos.</returns>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BanksController.GetAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Endpoint para obtenção de dados de um banco.
+            </summary>
+            <param name="code">Código do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco.</returns>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BanksController.PostAsync(Api.Bank.Domain.DTOs.BankDTO,System.Threading.CancellationToken)">
+            <summary>
+            Endpoint para registro de um banco.
+            </summary>
+            <param name="request">Dados do banco.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do banco.</returns>
+        </member>
+        <member name="T:Api.Bank.Application.Controllers.BankSlipsController">
+            <summary>
+            Classe de controle de endpoints para boleto bancário.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BankSlipsController.#ctor(System.IServiceProvider)">
+            <summary>
+            Método construtor.
+            </summary>
+            <param name="provider">Instância do provedor de serviços.</param>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BankSlipsController.GetAsync(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Endpoint  que obtém lista paginável de bancos.
+            </summary>
+            <param name="id">Id do boleto.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>Dados do boleto bancário.</returns>
+        </member>
+        <member name="M:Api.Bank.Application.Controllers.BankSlipsController.PostAsync(Api.Bank.Domain.DTOs.BankSlipDTO,System.Threading.CancellationToken)">
+            <summary>
+            Endpoint que registra um novo boleto bancário.
+            </summary>
+            <param name="request">Dados do boleto à ser registrado.</param>
+            <param name="cancellationToken">Token de cancelamento de operação assíncrona.</param>
+            <returns>DDados do boleto registrado.</returns>
+        </member>
+        <member name="T:Api.Bank.Application.Program">
+            <summary>
+            Classe de inicialização.
+            </summary>
+        </member>
+        <member name="M:Api.Bank.Application.Program.Main(System.String[])">
+            <summary>
+            Método de inicialização.
+            </summary>
+            <param name="args">Argumentos de inicialização.</param>
+        </member>
+    </members>
+</doc>
